@@ -3,6 +3,7 @@ import { AuthProvider } from "./context/AuthContext.jsx";
 
 import HomePage from "./pages/HomePage";
 import SignInPage from "./pages/SignInPage";
+import SignUpPage from "./pages/SignUpPage";
 import PaymentsPage from "./pages/PaymentsPage";
 
 export default function App() {
@@ -12,6 +13,7 @@ export default function App() {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/signin" component={SignInPage} />
+          <Route path="/signup" component={SignUpPage} />
           <Route path="/payments" component={PaymentsPage} />
         </Switch>
       </AuthProvider>
