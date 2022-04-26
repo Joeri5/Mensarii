@@ -13,7 +13,7 @@ export default function App() {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/signin" component={SignInPage} />
-          <Route path="/signup" component={SignUpPage} />
+          {/* <Route path="/signup" component={SignUpPage} /> */}
           <Route path="/payments" component={PaymentsPage} />
         </Switch>
       </AuthProvider>

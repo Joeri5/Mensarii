@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import firebase from "firebase/compat";
 // import { Link } from "react-router-dom";
 import { auth } from "../firebase";
@@ -5,6 +6,8 @@ import { auth } from "../firebase";
 import { Google, Github, Facebook } from "../assets";
 
 const SignInPage = () => {
+  const [loading, setLoading] = useState(false);
+
   return (
     <div className="h-screen bg-white">
       <div className="flex flex-col justify-center">
