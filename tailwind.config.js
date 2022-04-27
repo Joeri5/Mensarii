@@ -75,6 +75,9 @@ module.exports = {
         85: "22rem",
         creditcard: "calc(100vw - 2.5rem)",
       },
+      padding: {
+        16: "3.75rem",
+      },
     },
   },
   variants: {

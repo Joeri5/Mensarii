@@ -1,16 +1,18 @@
 import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../firebase";
-import Spinner from "../components/Spinner";
-import UserNavbar from "../components/UserNavbar";
+import { useAuth } from "../context/AuthContext";
 import CreditCard from "../components/CreditCard";
+import faker from "@faker-js/faker";
 
-import { SearchIcon } from "../assets";
+import { ArrowBack, Logout, Money, User } from "../assets";
+import { one, two, three, four, five, six } from "../assets/profilePictures";
+import UserProfile from "../components/UserProfile";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase";
 
 const PaymentsPage = () => {
   const history = useHistory();
-  const [user, loading] = useAuthState(auth);
+  const { user } = useAuth();
   const date = new Date(Date.now());
 
   useEffect(() => {
@@ -21,24 +23,33 @@ const PaymentsPage = () => {
     }
   }, [user, history]);
 
-  if (!user || loading) return <Spinner />;
-
   return (
-    <div className="bg-white h-screen w-full overflow-hidden">
-      {/* <UserNavbar /> */}
-      <div className="px-5 py-5 flex items-center justify-between">
-        <div className="flex flex-col gap-0">
-          <p className="opacity-60 font-medium text-lg">
+    <div className="bg-gray-100 h-screen w-full overflow-x-hidden">
+      <div className="mx-5 my-5 flex justify-between">
+        <button
+          onClick={history.goBack}
+          className="bg-white px-3 py-2 rounded-xl shadow-sm"
+        >
+          <img src={ArrowBack} alt="" className="w-7 h-7" />
+        </button>
+        <div className="flex items-center justify-between bg-white w-4/6 px-5 rounded-xl shadow-sm">
+          <p className="font-semibold">{user.displayName}</p>
+          <p className="opacity-60 text-sm">
             {date.getDate()} {date.toLocaleString("en-US", { month: "long" })}
           </p>
-          <h3 className="text-2xl font-semibold ">Hey, {user.displayName}!</h3>
         </div>
-        <div className="w-10 h-10 flex items-center justify-center rounded-lg shadow drop-shadow-4xl">
-          <img src={SearchIcon} alt="" className="w-7 h-7" />
-        </div>
+        <button
+          onClick={() => {
+            signOut(auth);
+            history.push("/");
+          }}
+          className="bg-white px-3 py-2 rounded-xl shadow-sm"
+        >
+          <img src={Logout} alt="" className="w-7 h-7" />
+        </button>
       </div>
-      <p className="px-5 pr-5 pt-5 text-xl font-medium">Choose Card</p>
-      <div className="px-5 py-2 flex overflow-x-scroll gap-10 justify-between w-full">
+      <p className="mx-5 mr-5 text-xl font-semibold">Choose Card</p>
+      <div className="mx-5 my-4 flex overflow-x-scroll gap-10 justify-between w-full">
         <CreditCard
           cardNumber={"0134"}
           balance={"5,309"}
@@ -60,7 +71,67 @@ const PaymentsPage = () => {
           background={"bg-viking-500"}
         />
       </div>
-      <p className="px-5 pr-5 pt-5 text-xl font-medium">Choose Recipient</p>
+      <p className="px-5 pr-5 pt-5 text-xl font-semibold">Choose Recipient</p>
+      <div className="mx-5 my-5 flex flex-col gap-5 items-center md:flex-row md:gap-10">
+        <div className="w-full md:w-1/2">
+          <label class="relative block">
+            <img
+              class="pointer-events-none w-7 h-7 absolute top-1/2 transform -translate-y-1/2 left-5"
+              src={User}
+            />
+            <input
+              type="text"
+              placeholder="Card or Phone Number..."
+              class="shadow-sm w-full rounded-lg py-4 block pl-14 focus:outline-none"
+            />
+          </label>
+        </div>
+        <div class="overflow-x-scroll flex gap-10 justify-between w-full md:w-1/2">
+          <UserProfile
+            profilePicture={one}
+            userName={faker.name.firstName("male")}
+          />
+          <UserProfile
+            profilePicture={two}
+            userName={faker.name.firstName("male")}
+          />
+          <UserProfile
+            profilePicture={three}
+            userName={faker.name.firstName("female")}
+          />
+          <UserProfile
+            profilePicture={four}
+            userName={faker.name.firstName("male")}
+          />
+          <UserProfile
+            profilePicture={five}
+            userName={faker.name.firstName("male")}
+          />
+          <UserProfile
+            profilePicture={six}
+            userName={faker.name.firstName("male")}
+          />
+        </div>
+      </div>
+      <p className="mx-5 mt-7 text-xl font-semibold">Enter Amount</p>
+      <div className="mx-5">
+        <div className="w-full md:w-1/2 mt-5 mb-10">
+          <label class="relative block">
+            <img
+              class="pointer-events-none w-7 h-7 absolute top-1/2 transform -translate-y-1/2 left-5"
+              src={Money}
+            />
+            <input
+              type="text"
+              placeholder="From $0.01 to $100,000..."
+              class="shadow-sm w-full rounded-lg py-4 block pl-14 focus:outline-none"
+            />
+          </label>
+        </div>
+        <button className="bg-mine-shaft-500 w-full py-4 text-white rounded-xl">
+          Transfer Money
+        </button>
+      </div>
     </div>
   );
 };

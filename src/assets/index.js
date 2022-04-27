@@ -4,3 +4,7 @@ export { default as Facebook } from "./facebook.svg";
 export { default as SearchIcon } from "./search.svg";
 export { default as VisaIcon } from "./visa.svg";
 export { default as Dot } from "./dot.svg";
+export { default as User } from "./user.svg";
+export { default as ArrowBack } from "./back-arrow.svg";
+export { default as Money } from "./money.svg";
+export { default as Logout } from "./logout.svg";
