@@ -8,3 +8,7 @@ export { default as User } from "./user.svg";
 export { default as ArrowBack } from "./back-arrow.svg";
 export { default as Money } from "./money.svg";
 export { default as Logout } from "./logout.svg";
+export { default as At } from "./at.svg";
+export { default as Lock } from "./lock.svg";
+export { default as Background } from "./background.jpg";
+export { default as PiggyBank } from "./piggybank.png";

@@ -8,3 +8,8 @@ html {
   font-family: "Poppins", sans-serif;
   @apply bg-mine-shaft-500;
 }
+
+.MuiOutlinedInput-root {
+  font-family: "Poppins", sans-serif;
+  @apply bg-white rounded-lg !important;
+}

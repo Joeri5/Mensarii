@@ -24,7 +24,7 @@ const PaymentsPage = () => {
   }, [user, history]);
 
   return (
-    <div className="bg-gray-100 h-screen w-full overflow-x-hidden">
+    <div className="bg-gray-100 h-full w-full overflow-x-hidden">
       <div className="mx-5 my-5 flex justify-between">
         <button
           onClick={history.goBack}
@@ -122,15 +122,17 @@ const PaymentsPage = () => {
               src={Money}
             />
             <input
-              type="text"
+              type="number"
               placeholder="From $0.01 to $100,000..."
               class="shadow-sm w-full rounded-lg py-4 block pl-14 focus:outline-none"
             />
           </label>
         </div>
-        <button className="bg-mine-shaft-500 w-full py-4 text-white rounded-xl">
-          Transfer Money
-        </button>
+        <div className="pb-5">
+          <button className="bg-mine-shaft-500 w-full py-4 text-white rounded-xl">
+            Transfer Money
+          </button>
+        </div>
       </div>
     </div>
   );
