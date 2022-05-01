@@ -4,17 +4,19 @@ import { Business, Google } from "../assets";
 
 const WelcomePage = () => {
   return (
-    <div className="bg-java h-screen overflow-hidden">
-      <div className="w-96 py-10 md:flex md:bg-white md:w-screen md:h-full md:justify-end md:absolute">
+    <div className="bg-java h-full overflow-hidden">
+      <div className="w-80 py-10 md:flex md:bg-white md:w-screen md:h-full md:justify-end md:absolute">
         <img
           src={Business}
           alt=""
-          className="md:object-contain md:w-1/2 md:flex md:justify-start"
+          className="md:object-contain md:w-1/2 flex justify-center md:justify-start"
         />
       </div>
       <div className="flex flex-col text-white mx-5 md:relative md:w-1/2 md:h-screen md:mx-0 md:bg-java md:py-80 md:items-center">
         <div className="md:flex md:flex-col md:items-start md:w-1/2">
-          <h1 className="text-2xl font-semibold md:text-3xl">Welcome</h1>
+          <h1 className="text-2xl font-semibold md:text-3xl">
+            Welcome to Mensarii
+          </h1>
           <div className="my-5">
             <p className="md:text-xl">Manage your expenses</p>
             <h3 className="text-xl md:text-2xl font-medium">
@@ -33,11 +35,13 @@ const WelcomePage = () => {
               </div>
             </div>
           </button>
-          <button className="py-3 w-full bg-java border-2 border-white rounded-xl">
-            Create an account
-          </button>
+          <Link to="/signup">
+            <button className="py-3 w-full bg-java border-2 border-white rounded-xl">
+              Create an account
+            </button>
+          </Link>
         </div>
-        <div className="flex items-center justify-center text-sm md:w-1/2 md:mx-5 ">
+        <div className="flex items-center justify-center pb-5 text-sm md:w-1/2 md:mx-5 ">
           <span className="opacity-70">Already have an account&nbsp;</span>
           <Link to="/login" className=" text-opacity-100">
             Log In
