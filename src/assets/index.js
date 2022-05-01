@@ -12,3 +12,5 @@ export { default as At } from "./at.svg";
 export { default as Lock } from "./lock.svg";
 export { default as Background } from "./background.jpg";
 export { default as PiggyBank } from "./piggybank.png";
+export { default as Business } from "./business.svg";
+export { default as Arrow } from "./arrow.svg";
