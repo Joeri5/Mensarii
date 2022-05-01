@@ -97,9 +97,13 @@ module.exports = {
         ],
       },
       width: {
+        100: "30rem",
         90: "23.5rem",
         85: "22rem",
         creditcard: "calc(100vw - 2.5rem)",
+      },
+      height: {
+        home: "calc(100vh - 8rem)",
       },
       padding: {
         16: "3.75rem",

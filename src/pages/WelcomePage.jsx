@@ -14,9 +14,7 @@ const WelcomePage = () => {
       </div>
       <div className="flex flex-col text-white mx-5 md:relative md:w-1/2 md:h-screen md:mx-0 md:bg-java md:py-80 md:items-center">
         <div className="md:flex md:flex-col md:items-start md:w-1/2">
-          <h1 className="text-2xl font-semibold md:text-3xl">
-            Welcome to Mensarii
-          </h1>
+          <h1 className="text-2xl font-semibold md:text-3xl">Welcome</h1>
           <div className="my-5">
             <p className="md:text-xl">Manage your expenses</p>
             <h3 className="text-xl md:text-2xl font-medium">

@@ -24,7 +24,7 @@ const PaymentsPage = () => {
   }, [user, history]);
 
   return (
-    <div className="bg-gray-100 h-full w-full overflow-x-hidden">
+    <div className="bg-gray-100 h-screen w-full overflow-x-hidden">
       <div className="mx-5 my-5 flex justify-between">
         <button
           onClick={history.goBack}
