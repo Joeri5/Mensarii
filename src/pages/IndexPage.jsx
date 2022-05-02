@@ -31,7 +31,7 @@ const IndexPage = () => {
                 bank
               </p>
             </div>
-            <button className="my-5 w-full md:w-2/5 py-4 px-5 bg-white bg-opacity-10 rounded-xl">
+            <button className="my-5 w-full md:w-6/12 py-4 px-5 bg-white bg-opacity-10 rounded-xl">
               <Link to="/welcome">Get Started</Link>
             </button>
           </div>

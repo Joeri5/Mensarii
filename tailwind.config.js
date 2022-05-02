@@ -88,6 +88,10 @@ module.exports = {
           800: "#6BC2A8",
           900: "#48AD8F",
         },
+        send: "#fee7d5",
+        receive: "#d9ffe5",
+        exchange: "#f8fcca",
+        other: "#f4f4f4",
       },
       dropShadow: {
         "3xl": "0 35px 35px rgba(0, 0, 0, 0.25)",
@@ -100,13 +104,16 @@ module.exports = {
         100: "30rem",
         90: "23.5rem",
         85: "22rem",
+        68: "17.5rem",
         creditcard: "calc(100vw - 2.5rem)",
       },
       height: {
         home: "calc(100vh - 8rem)",
       },
       padding: {
-        16: "3.75rem",
+        26: "6.5rem",
+        22: "5.5rem",
+        18: "4.4rem",
       },
     },
   },

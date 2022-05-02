@@ -72,7 +72,7 @@ const LoginPage = () => {
               <span className="text-gray-400">
                 Don't have an account?&nbsp;
               </span>
-              <Link to="/login" className="text-opacity-100 text-java">
+              <Link to="/signup" className="text-opacity-100 text-java">
                 Sign Up
               </Link>
             </div>

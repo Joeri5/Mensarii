@@ -1,11 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Business, Google } from "../assets";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { Arrow, Business, Google } from "../assets";
+import firebase from "firebase/compat";
+import { auth } from "../firebase";
 
 const WelcomePage = () => {
+  const history = useHistory();
+
   return (
-    <div className="bg-java h-full overflow-hidden">
-      <div className="w-80 py-10 md:flex md:bg-white md:w-screen md:h-full md:justify-end md:absolute">
+    <div className="bg-java h-screen overflow-hidden">
+      <div className="px-5 pt-5 md:w-1/2 absolute z-50">
+        <button onClick={() => history.goBack()}>
+          <img src={Arrow} alt="" className="w-12" />
+        </button>
+      </div>
+      <div className="w-80 md:flex md:bg-white md:w-screen md:h-full md:justify-end md:absolute">
         <img
           src={Business}
           alt=""
@@ -23,7 +33,12 @@ const WelcomePage = () => {
           </div>
         </div>
         <div className="flex flex-col gap-3 my-5 md:w-1/2 md:mx-5">
-          <button className="flex gap-10 items-center py-3 w-full bg-white text-java rounded-xl">
+          <button
+            className="flex gap-10 items-center py-3 w-full bg-white text-java rounded-xl"
+            onClick={() =>
+              auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider())
+            }
+          >
             <div className="flex items-center w-full">
               <div className="flex mx-3 justify-start">
                 <img src={Google} alt="" className="w-7 h-7" />
