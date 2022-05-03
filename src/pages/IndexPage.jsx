@@ -38,7 +38,7 @@ const IndexPage = () => {
             </div>
             <Link
               to="/welcome"
-              className="my-5 w-full md:w-6/12 py-4 px-5 bg-white bg-opacity-10 text-center rounded-xl"
+              className="my-5 md:w-6/12 py-4 px-28 bg-white bg-opacity-10 text-center rounded-xl"
             >
               Get Started
             </Link>
