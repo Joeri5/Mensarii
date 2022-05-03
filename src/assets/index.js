@@ -22,3 +22,5 @@ export { default as Euro } from "./euro.svg";
 export { default as Shapes } from "./shapes.svg";
 export { default as Logout } from "./logout.svg";
 export { default as House } from "./house.svg";
+export { default as Chart } from "./chart.svg";
+export { default as ArrowBlack } from "./arrowblack.svg";

@@ -109,6 +109,7 @@ module.exports = {
       },
       height: {
         home: "calc(100vh - 8rem)",
+        51: "12.75rem",
       },
       padding: {
         26: "6.5rem",
