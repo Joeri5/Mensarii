@@ -1,4 +1,3 @@
-import faker from "@faker-js/faker";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
@@ -12,14 +11,13 @@ import {
   User,
   UserCard,
   Chart,
-  Arrow,
   ArrowBlack,
 } from "../assets";
 import { auth } from "../firebase";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const HomePage = () => {
-  const [user, loading] = useAuthState(auth);
+  const [user] = useAuthState(auth);
   const history = useHistory();
 
   return (

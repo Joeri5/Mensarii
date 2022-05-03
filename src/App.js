@@ -4,7 +4,6 @@ import { AuthProvider } from "./context/AuthContext.jsx";
 import WelcomePage from "./pages/WelcomePage.jsx";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
-import PaymentsPage from "./pages/PaymentsPage";
 import FallBackPage from "./pages/FallBackPage.jsx";
 import IndexPage from "./pages/IndexPage.jsx";
 import HomePage from "./pages/HomePage.jsx";

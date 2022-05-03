@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Cards, Logo } from "../assets";
+import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 
 const IndexPage = () => {
   return (
@@ -9,13 +10,17 @@ const IndexPage = () => {
         <img src={Logo} alt="logo" className="w-24 h-24" />
       </div>
       <div className="flex flex-col justify-center h-home">
-        <div className="shadow-2xl shadow-white md:absolute">
+        <motion.div
+          whileInView={{ x: [-100, 0], opacity: [0, 1] }}
+          transition={{ duration: 0.5 }}
+          className="shadow-2xl shadow-white md:absolute md:ml-10"
+        >
           <img
             src={Cards}
             alt="Cards"
             className="md:object-contain md:w-1/2 md:flex md:justify-start"
           />
-        </div>
+        </motion.div>
         <div className="my-10 flex justify-center md:justify-end items-center md:my">
           <div className="md:relative md:w-1/2 md:flex md:flex-col md:items-center">
             <div>
@@ -31,9 +36,12 @@ const IndexPage = () => {
                 bank
               </p>
             </div>
-            <button className="my-5 w-full md:w-6/12 py-4 px-5 bg-white bg-opacity-10 rounded-xl">
-              <Link to="/welcome">Get Started</Link>
-            </button>
+            <Link
+              to="/welcome"
+              className="my-5 w-full md:w-6/12 py-4 px-5 bg-white bg-opacity-10 text-center rounded-xl"
+            >
+              Get Started
+            </Link>
           </div>
         </div>
       </div>
